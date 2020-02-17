@@ -1231,7 +1231,7 @@ tests = ["pytest", "pytest-cov", "codecov"]
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version >= \"3.5\" and python_version < \"3.8\" or python_version < \"3.8\""
+marker = "python_version >= \"3.5\" and python_version < \"3.8\" or python_version < \"3.8\" or python_version >= \"3.5\" and python_version < \"3.8\" and (python_version >= \"3.5\" and python_version < \"3.8\" or python_version < \"3.8\")"
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -1245,7 +1245,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "4724807f2f955da396c430756ecab4c507a3e49e59373df50fe022b1ac436420"
+content-hash = "bcbf56d7299a20489045d4352e2525910a0daee47834842b3eb74962fd8feff0"
 python-versions = "^3.7"
 
 [metadata.files]
