@@ -1,4 +1,4 @@
-"""poetry-merge-lock."""
+"""Merge the lock file of a Poetry project."""
 try:
     from importlib.metadata import version, PackageNotFoundError  # type: ignore
 except ImportError:  # pragma: no cover
