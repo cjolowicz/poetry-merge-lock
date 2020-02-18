@@ -33,7 +33,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
 class MergeConflictError(ValueError):
     """An item in the TOML document cannot be merged."""
 
-    def __init__(self, keys: List[Key], ours: Any, theirs: Any):
+    def __init__(self, keys: List[Key], ours: Any, theirs: Any) -> None:
         """Constructor."""
         message = "Merge conflict at {}, merging {!r} and {!r}".format(
             ".".join(str(key) for key in keys), ours, theirs
