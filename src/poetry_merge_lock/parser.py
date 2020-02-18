@@ -3,9 +3,7 @@ from typing import Iterator, Optional, Sequence, Tuple
 
 
 class Token(Enum):
-    """
-    Token for parsing files with merge conflicts.
-    """
+    """Token for parsing files with merge conflicts."""
 
     CONFLICT_START = "<<<<<<< "
     CONFLICT_SEPARATOR = "=======\n"
@@ -14,9 +12,7 @@ class Token(Enum):
 
 
 def tokenize(line: str) -> Token:
-    """
-    Return the token for the line.
-    """
+    """Return the token for the line."""
     for token in Token:
         if line.startswith(token.value):
             return token
@@ -25,9 +21,7 @@ def tokenize(line: str) -> Token:
 
 
 class State(Enum):
-    """
-    Parser state for files with merge conflicts.
-    """
+    """Parser state for files with merge conflicts."""
 
     COMMON = 1
     OURS = 2
@@ -35,9 +29,7 @@ class State(Enum):
 
 
 class UnexpectedTokenError(ValueError):
-    """
-    The parser encountered an unexpected token.
-    """
+    """The parser encountered an unexpected token."""
 
     def __init__(self, token: Token):
         super().__init__("unexpected token {}".format(token))
@@ -51,8 +43,7 @@ state_transitions = {
 
 
 def parse_line(line: str, state: State) -> Tuple[Token, State]:
-    """
-    Parse a single line in a file with merge conflicts.
+    """Parse a single line in a file with merge conflicts.
 
     Args:
         line: The line to be parsed.
@@ -76,8 +67,7 @@ def parse_line(line: str, state: State) -> Tuple[Token, State]:
 
 
 def parse_lines(lines: Sequence[str]) -> Iterator[Tuple[Optional[str], Optional[str]]]:
-    """
-    Parse a sequence of lines with merge conflicts.
+    """Parse a sequence of lines with merge conflicts.
 
     Args:
         lines: The sequence of lines to be parsed.
@@ -110,8 +100,7 @@ def parse_lines(lines: Sequence[str]) -> Iterator[Tuple[Optional[str], Optional[
 
 
 def parse(lines: Sequence[str]) -> Tuple[Sequence[str], Sequence[str]]:
-    """
-    Parse a sequence of lines with merge conflicts.
+    """Parse a sequence of lines with merge conflicts.
 
     Args:
         lines: The sequence of lines to be parsed.

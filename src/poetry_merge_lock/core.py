@@ -13,8 +13,7 @@ from .parser import parse
 
 
 def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
-    """
-    Load a pair of TOML documents from a TOML file with merge conflicts.
+    """Load a pair of TOML documents from a TOML file with merge conflicts.
 
     Args:
         toml_file: Path to the lock file.
@@ -32,9 +31,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
 
 
 class MergeConflictError(ValueError):
-    """
-    An item in the TOML document cannot be merged.
-    """
+    """An item in the TOML document cannot be merged."""
 
     def __init__(self, keys: List[Key], ours: Any, theirs: Any):
         message = "Merge conflict at {}, merging {!r} and {!r}".format(
@@ -44,8 +41,7 @@ class MergeConflictError(ValueError):
 
 
 def merge_locked_packages(value: List[Table], other: List[Table]) -> List[Table]:
-    """
-    Merge two TOML arrays containing locked packages.
+    """Merge two TOML arrays containing locked packages.
 
     Args:
         value: The packages in *our* version of the lock file.
@@ -68,8 +64,7 @@ def merge_locked_packages(value: List[Table], other: List[Table]) -> List[Table]
 
 
 def merge_locked_package_files(value: Table, other: Table) -> Table:
-    """
-    Merge two TOML tables containing package files.
+    """Merge two TOML tables containing package files.
 
     Args:
         value: The package files in *our* version of the lock file.
@@ -94,8 +89,7 @@ def merge_locked_package_files(value: Table, other: Table) -> Table:
 
 
 def merge_lock_data(value: _TOMLDocument, other: _TOMLDocument) -> _TOMLDocument:
-    """
-    Merge two versions of lock data.
+    """Merge two versions of lock data.
 
     This function returns a TOML document with the following merged entries:
 
@@ -124,8 +118,7 @@ def merge_lock_data(value: _TOMLDocument, other: _TOMLDocument) -> _TOMLDocument
 
 
 def load_lock_data(locker: Locker) -> _TOMLDocument:
-    """
-    Load a lock file with merge conflicts.
+    """Load a lock file with merge conflicts.
 
     Args:
         locker: The locker object.
@@ -139,8 +132,7 @@ def load_lock_data(locker: Locker) -> _TOMLDocument:
 
 
 def activate_dependencies(packages: List[Package]) -> None:
-    """
-    Activate the optional dependencies of every package.
+    """Activate the optional dependencies of every package.
 
     Activating optional dependencies ensures their inclusion when the lock file
     is written.  Normally, optional dependencies are activated by the solver if
@@ -160,8 +152,7 @@ def activate_dependencies(packages: List[Package]) -> None:
 
 
 def load_packages(locker: Locker, lock_data: _TOMLDocument) -> List[Package]:
-    """
-    Load the packages from a TOML document with lock data.
+    """Load the packages from a TOML document with lock data.
 
     Args:
         locker: The locker object.
@@ -177,8 +168,7 @@ def load_packages(locker: Locker, lock_data: _TOMLDocument) -> List[Package]:
 
 
 def save_lock_data(locker: Locker, lock_data: _TOMLDocument, root: Package) -> None:
-    """
-    Validate the lock data and write it to disk.
+    """Validate the lock data and write it to disk.
 
     Args:
         locker: The locker object.
@@ -190,8 +180,6 @@ def save_lock_data(locker: Locker, lock_data: _TOMLDocument, root: Package) -> N
 
 
 def merge_lock_file(poetry: Poetry) -> None:
-    """
-    Resolve merge conflicts in Poetry's lock file.
-    """
+    """Resolve merge conflicts in Poetry's lock file."""
     lock_data = load_lock_data(poetry.locker)
     save_lock_data(poetry.locker, lock_data, poetry.package)
