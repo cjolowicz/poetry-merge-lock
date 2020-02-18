@@ -92,7 +92,7 @@ def save_lock_data(locker: Locker, lock_data: _TOMLDocument, root: Package) -> N
     locker.set_lock_data(root, packages)
 
 
-def merge_lock_file(poetry: Poetry) -> None:
+def merge_lock(poetry: Poetry) -> None:
     """Resolve merge conflicts in Poetry's lock file."""
     lock_data = load_lock_data(poetry.locker)
     save_lock_data(poetry.locker, lock_data, poetry.package)
