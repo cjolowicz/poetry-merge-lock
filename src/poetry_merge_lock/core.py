@@ -9,7 +9,7 @@ import tomlkit
 from tomlkit.api import _TOMLDocument
 
 from . import parser
-from .mergetool import merge_lock_data
+from . import mergetool
 
 
 def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
@@ -41,7 +41,7 @@ def load_lock_data(locker: Locker) -> _TOMLDocument:
     """
     lock_file = Path(locker.lock._path)
     ours, theirs = load_toml_versions(lock_file)
-    return merge_lock_data(ours, theirs)
+    return mergetool.merge_lock_data(ours, theirs)
 
 
 def activate_dependencies(packages: List[Package]) -> None:
