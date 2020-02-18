@@ -32,7 +32,7 @@ class State(Enum):
 class UnexpectedTokenError(ValueError):
     """The parser encountered an unexpected token."""
 
-    def __init__(self, token: Token):
+    def __init__(self, token: Token) -> None:
         """Constructor."""
         super().__init__("unexpected token {}".format(token))
 
