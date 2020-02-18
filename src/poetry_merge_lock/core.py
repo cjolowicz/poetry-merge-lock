@@ -22,7 +22,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         A pair of TOML documents, corresponding to *our* version and *their*
         version.
     """
-    def load(lines):
+    def load(lines):  # noqa
         return tomlkit.loads("".join(lines))
 
     with toml_file.open() as fp:
