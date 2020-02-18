@@ -22,9 +22,12 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         A pair of TOML documents, corresponding to *our* version and *their*
         version.
     """
+    def load(lines):
+        return tomlkit.loads("".join(lines))
+
     with toml_file.open() as fp:
         ours, theirs = parse(fp)
-        return tuple(tomlkit.loads("".join(lines)) for lines in (ours, theirs))
+        return load(ours), load(theirs)
 
 
 def load_lock_data(locker: Locker) -> _TOMLDocument:
