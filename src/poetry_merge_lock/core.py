@@ -1,5 +1,5 @@
 import itertools
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from poetry.poetry import Poetry
 from poetry.packages import Package
