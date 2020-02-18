@@ -41,7 +41,7 @@ def load_lock_data(locker: Locker) -> _TOMLDocument:
     """
     lock_file = Path(locker.lock._path)
     ours, theirs = load_toml_versions(lock_file)
-    return mergetool.merge_lock_data(ours, theirs)
+    return mergetool.merge(ours, theirs)
 
 
 def activate_dependencies(packages: List[Package]) -> None:

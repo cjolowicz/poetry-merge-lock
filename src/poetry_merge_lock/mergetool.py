@@ -65,7 +65,7 @@ def merge_locked_package_files(value: Table, other: Table) -> Table:
     return files
 
 
-def merge_lock_data(value: _TOMLDocument, other: _TOMLDocument) -> _TOMLDocument:
+def merge(value: _TOMLDocument, other: _TOMLDocument) -> _TOMLDocument:
     """Merge two versions of lock data.
 
     This function returns a TOML document with the following merged entries:
