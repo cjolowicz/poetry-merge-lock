@@ -8,8 +8,8 @@ from poetry.utils._compat import Path
 import tomlkit
 from tomlkit.api import _TOMLDocument
 
-from . import parser
 from . import mergetool
+from . import parser
 
 
 def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
