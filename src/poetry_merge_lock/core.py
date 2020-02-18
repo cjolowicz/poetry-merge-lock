@@ -1,6 +1,4 @@
-"""
-Core module.
-"""
+"""Core module."""
 import itertools
 from typing import Any, Dict, List, Tuple
 
