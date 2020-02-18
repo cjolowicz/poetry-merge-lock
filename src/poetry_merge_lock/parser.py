@@ -1,3 +1,4 @@
+"""Line-based parser for files with merge conflicts."""
 from enum import Enum
 from typing import Iterator, Optional, Sequence, Tuple
 
