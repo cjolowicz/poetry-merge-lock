@@ -4,9 +4,9 @@ Core module.
 import itertools
 from typing import Any, Dict, List, Tuple
 
-from poetry.poetry import Poetry
 from poetry.packages import Package
 from poetry.packages.locker import Locker
+from poetry.poetry import Poetry
 from poetry.utils._compat import Path
 import tomlkit
 from tomlkit.api import _TOMLDocument, Key, Table
