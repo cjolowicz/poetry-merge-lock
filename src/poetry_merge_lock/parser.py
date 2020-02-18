@@ -33,6 +33,7 @@ class UnexpectedTokenError(ValueError):
     """The parser encountered an unexpected token."""
 
     def __init__(self, token: Token):
+        """Constructor."""
         super().__init__("unexpected token {}".format(token))
 
 
