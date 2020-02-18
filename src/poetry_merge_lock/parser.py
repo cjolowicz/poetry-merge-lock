@@ -110,10 +110,6 @@ def parse(lines: Sequence[str]) -> Tuple[Sequence[str], Sequence[str]]:
     Returns:
         A pair of sequences of lines. The first sequence corresponds to *our*
         version, and the second, to *their* version.
-
-    Raises:
-        UnexpectedTokenError: An unexpected token was encountered.
-        ValueError: A conflict marker was not terminated.
     """
     result = parse_lines(lines)
     ours, theirs = zip(*result)
