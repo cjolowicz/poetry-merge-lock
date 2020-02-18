@@ -30,7 +30,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         return load(ours), load(theirs)
 
 
-def load_lock_data(locker: Locker) -> _TOMLDocument:
+def load(locker: Locker) -> _TOMLDocument:
     """Load a lock file with merge conflicts.
 
     Args:
@@ -80,7 +80,7 @@ def load_packages(locker: Locker, lock_data: _TOMLDocument) -> List[Package]:
     return repository.packages
 
 
-def save_lock_data(locker: Locker, lock_data: _TOMLDocument, root: Package) -> None:
+def save(locker: Locker, lock_data: _TOMLDocument, root: Package) -> None:
     """Validate the lock data and write it to disk.
 
     Args:
@@ -94,5 +94,5 @@ def save_lock_data(locker: Locker, lock_data: _TOMLDocument, root: Package) -> N
 
 def merge_lock(poetry: Poetry) -> None:
     """Resolve merge conflicts in Poetry's lock file."""
-    lock_data = load_lock_data(poetry.locker)
-    save_lock_data(poetry.locker, lock_data, poetry.package)
+    lock_data = load(poetry.locker)
+    save(poetry.locker, lock_data, poetry.package)
