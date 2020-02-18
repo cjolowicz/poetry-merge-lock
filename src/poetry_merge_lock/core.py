@@ -1,5 +1,5 @@
 """Core module."""
-from typing import List, Tuple
+from typing import List, Sequence, Tuple
 
 from poetry.packages import Package
 from poetry.packages.locker import Locker
@@ -22,7 +22,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         A pair of TOML documents, corresponding to *our* version and *their*
         version.
     """
-    def load(lines):  # noqa
+    def load(lines: Sequence[str]) -> _TOMLDocument:  # noqa
         return tomlkit.loads("".join(lines))
 
     with toml_file.open() as fp:
