@@ -25,7 +25,6 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         A pair of TOML documents, corresponding to *our* version and *their*
         version.
     """
-
     with toml_file.open() as fp:
         ours, theirs = parse(fp)
         return tuple(
