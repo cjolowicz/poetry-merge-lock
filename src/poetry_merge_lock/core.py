@@ -34,6 +34,7 @@ class MergeConflictError(ValueError):
     """An item in the TOML document cannot be merged."""
 
     def __init__(self, keys: List[Key], ours: Any, theirs: Any):
+        """Constructor."""
         message = "Merge conflict at {}, merging {!r} and {!r}".format(
             ".".join(str(key) for key in keys), ours, theirs
         )
