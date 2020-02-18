@@ -18,7 +18,7 @@ def tokenize(line: str) -> Token:
         if line.startswith(token.value):
             return token
 
-    return Token.DEFAULT
+    return Token.DEFAULT  # pragma: no cover
 
 
 class State(Enum):
