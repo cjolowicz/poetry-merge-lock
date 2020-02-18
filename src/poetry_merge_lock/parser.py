@@ -107,3 +107,26 @@ def parse_lines(lines: Sequence[str]) -> Iterator[Tuple[Optional[str], Optional[
 
     if state is not State.COMMON:
         raise ValueError("unterminated conflict marker")
+
+
+def parse(lines: Sequence[str]) -> Tuple[Sequence[str], Sequence[str]]:
+    """
+    Parse a sequence of lines with merge conflicts.
+
+    Args:
+        lines: The sequence of lines to be parsed.
+
+    Returns:
+        A pair of sequences of lines. The first sequence corresponds to *our*
+        version, and the second, to *their* version.
+
+    Raises:
+        UnexpectedTokenError: An unexpected token was encountered.
+        ValueError: A conflict marker was not terminated.
+    """
+    result = parse_lines(lines)
+    ours, theirs = zip(*result)
+    return (
+        [line for line in ours if line is not None],
+        [line for line in theirs if line is not None],
+    )
