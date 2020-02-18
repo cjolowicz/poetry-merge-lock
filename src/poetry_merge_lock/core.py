@@ -1,6 +1,5 @@
-from enum import Enum
 import itertools
-from typing import Any, Dict, Iterator, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from poetry.poetry import Poetry
 from poetry.packages import Package
