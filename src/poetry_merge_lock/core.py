@@ -8,7 +8,7 @@ from poetry.utils._compat import Path
 import tomlkit
 from tomlkit.api import _TOMLDocument, Key, Table
 
-from .parser import parse_lines
+from .parser import parse
 
 
 def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
@@ -23,14 +23,12 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         version.
     """
 
-    def load(lines: Sequence[Optional[str]]) -> _TOMLDocument:
-        data = "".join(line for line in lines if line is not None)
-        return tomlkit.loads(data)
-
     with toml_file.open() as fp:
-        parse_result = parse_lines(fp)
-        ours, theirs = zip(*parse_result)
-        return load(ours), load(theirs)
+        ours, theirs = parse(fp)
+        return tuple(
+            tomlkit.loads("".join(lines))
+            for lines in (ours, theirs)
+        )
 
 
 class MergeConflictError(ValueError):
