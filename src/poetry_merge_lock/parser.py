@@ -74,10 +74,10 @@ def parse_lines(lines: Sequence[str]) -> Iterator[Tuple[Optional[str], Optional[
     Args:
         lines: The sequence of lines to be parsed.
 
-    Returns:
-        A sequence of pairs. The first item in each pair is a line in
-        *our* version, and the second, in *their* version. An item is
-        ``None`` if the line does not occur in that version.
+    Yields:
+        Pairs, where first item in each pair is a line in *our* version, and
+        the second, in *their* version. An item is ``None`` if the line does
+        not occur in that version.
 
     Raises:
         ValueError: A conflict marker was not terminated.
