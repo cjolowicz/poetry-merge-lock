@@ -24,10 +24,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
     """
     with toml_file.open() as fp:
         ours, theirs = parse(fp)
-        return tuple(
-            tomlkit.loads("".join(lines))
-            for lines in (ours, theirs)
-        )
+        return tuple(tomlkit.loads("".join(lines)) for lines in (ours, theirs))
 
 
 class MergeConflictError(ValueError):
