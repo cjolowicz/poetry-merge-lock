@@ -1,3 +1,4 @@
+"""Merge tool for Poetry lock files at the TOML level."""
 import itertools
 from typing import Any, Dict, List
 
