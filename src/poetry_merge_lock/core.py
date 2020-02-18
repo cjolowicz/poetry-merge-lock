@@ -8,7 +8,7 @@ from poetry.utils._compat import Path
 import tomlkit
 from tomlkit.api import _TOMLDocument
 
-from .parser import parse
+from . import parser
 from .mergetool import merge_lock_data
 
 
@@ -26,7 +26,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         return tomlkit.loads("".join(lines))
 
     with toml_file.open() as fp:
-        ours, theirs = parse(fp)
+        ours, theirs = parser.parse(fp)
         return load(ours), load(theirs)
 
 
