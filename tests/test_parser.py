@@ -1,7 +1,6 @@
 """Parser tests."""
-from poetry_merge_lock import parser
-
 import pytest
+from poetry_merge_lock import parser
 
 
 def test_tokenize_empty_string():
