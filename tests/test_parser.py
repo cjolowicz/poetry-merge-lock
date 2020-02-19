@@ -1,5 +1,6 @@
 """Parser tests."""
 import pytest
+
 from poetry_merge_lock import parser
 
 
