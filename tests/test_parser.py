@@ -27,3 +27,27 @@ def test_parse_unexpected_token() -> None:
     line = "=======\n"
     with pytest.raises(parser.UnexpectedTokenError):
         parser.parse_line(line, parser.State.COMMON)
+
+
+def test_parse_conflict() -> None:
+    """A merge conflict produces a version for each side."""
+    text = """\
+<<<<<<< HEAD
+content-hash = "5ef979fbca4b14a24b7f3e1f3f8831dc942a007d3872af8cc8fbf0dd9c4dc40b"
+=======
+content-hash = "44b4f46d0544df5414531b73cb9220196b616acd60143d76877c7d959e649c45"
+>>>>>>> Add foobar 1.0.0
+"""
+
+    lines = text.splitlines(keepends=True)
+    ours, theirs = parser.parse(lines)
+
+    assert ours == [lines[1]]
+    assert theirs == [lines[3]]
+
+
+def test_unterminated_conflict_marker() -> None:
+    """Unterminated conflict markers result in an exception."""
+    lines = ["""<<<<<<< HEAD\n"""]
+    with pytest.raises(ValueError):
+        parser.parse(lines)
