@@ -13,7 +13,7 @@ a packaging and dependency manager for Python.
 If the merge conflicts cannot be resolved by this tool,
 you can use the :option:`--print-content-hash` option to
 compute the content hash for the ``metadata.content-hash`` entry,
-and resolve the remaining merge conflicts manually.
+and resolve the conflicts manually.
 
 .. _Poetry: http://python-poetry.org/
 
