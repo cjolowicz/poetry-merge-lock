@@ -22,6 +22,10 @@ def main(print_content_hash: bool) -> None:
     conflicts cannot be resolved by this tool, you can use the
     --print-content-hash option to compute the content hash for the
     metadata.content-hash entry, and resolve the conflicts manually.
+    \f
+
+    Args:
+        print_content_hash: Print the content hash.
     """
     poetry = Factory().create_poetry(Path.cwd())
 
