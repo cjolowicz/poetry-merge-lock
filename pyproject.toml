@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetry-merge-lock"
-version = "0.1.0"
+version = "0.1.1"
 description = "poetry-merge-lock"
 authors = ["Claudio Jolowicz <mail@claudiojolowicz.com>"]
 license = "MIT"
