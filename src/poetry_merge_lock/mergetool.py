@@ -88,7 +88,7 @@ def merge(value: _TOMLDocument, other: _TOMLDocument) -> _TOMLDocument:
     document["metadata"] = {
         "files": merge_locked_package_files(
             value["metadata"]["files"], other["metadata"]["files"]
-        ),
+        )
     }
 
     return document

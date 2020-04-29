@@ -22,6 +22,7 @@ def load_toml_versions(toml_file: Path) -> Tuple[_TOMLDocument, _TOMLDocument]:
         A pair of TOML documents, corresponding to *our* version and *their*
         version.
     """
+
     def load(lines: Sequence[str]) -> _TOMLDocument:  # noqa
         return tomlkit.loads("".join(lines))
 
@@ -77,7 +78,7 @@ def load_packages(locker: Locker, lock_data: _TOMLDocument) -> List[Package]:
     locker._lock_data = lock_data
     repository = locker.locked_repository(with_dev_reqs=True)
     activate_dependencies(repository.packages)
-    return repository.packages
+    return repository.packages  # type: ignore[no-any-return]  # noqa: F723
 
 
 def save(locker: Locker, lock_data: _TOMLDocument, root: Package) -> None:

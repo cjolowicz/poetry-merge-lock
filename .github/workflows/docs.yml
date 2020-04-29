@@ -1,7 +1,7 @@
-name: Coverage
+name: Build documentation
 on: push
 jobs:
-  coverage:
+  docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.1.0
@@ -11,6 +11,8 @@ jobs:
       - run: |
           pip install --constraint=.github/workflows/constraints.txt pip
           pip install --constraint=.github/workflows/constraints.txt nox poetry
-      - run: nox --force-color --session=tests-3.8 -- --cov --cov-report=xml
-      - if: always()
-        uses: codecov/codecov-action@v1.0.6
+      - run: nox --force-color --session=docs
+      - uses: actions/upload-artifact@v1.0.0
+        with:
+          name: docs
+          path: docs/_build

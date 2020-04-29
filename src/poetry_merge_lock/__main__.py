@@ -3,7 +3,6 @@ import click
 from poetry.factory import Factory
 from poetry.utils._compat import Path
 
-from . import __version__
 from .core import merge_lock
 
 
@@ -13,7 +12,7 @@ from .core import merge_lock
     is_flag=True,
     help="Print the content hash (`metadata.content-hash`)",
 )
-@click.version_option(version=__version__)
+@click.version_option()
 def main(print_content_hash: bool) -> None:
     """Merge the lock file of a Poetry project.
 
@@ -33,3 +32,7 @@ def main(print_content_hash: bool) -> None:
         click.echo(poetry.locker._content_hash)
     else:
         merge_lock(poetry)
+
+
+if __name__ == "__main__":
+    main(prog_name="poetry-merge-lock")  # pragma: no cover

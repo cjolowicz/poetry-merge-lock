@@ -150,7 +150,7 @@ def test_merge_fails_on_inconsistent_attributes(
 ) -> None:
     """Packages are not merged if their version differs (or any other attribute)."""
     with pytest.raises(
-        mergetool.MergeConflictError, match=r"Merge conflict at package, .*",
+        mergetool.MergeConflictError, match=r"Merge conflict at package, .*"
     ):
         mergetool.merge(lockfile_with_click, lockfile_with_click6)
 
