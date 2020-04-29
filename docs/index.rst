@@ -5,8 +5,15 @@ poetry-merge-lock
    :hidden:
    :maxdepth: 1
 
-   license
    reference
+   contributing
+   Code of Conduct <codeofconduct>
+   License <license>
+   Changelog <https://github.com/cjolowicz/poetry-merge-lock/releases>
+
+.. include:: ../README.rst
+   :start-after: badges-begin
+   :end-before: badges-end
 
 This is a tool for resolving merge conflicts in the lock file of `Poetry`_,
 a packaging and dependency manager for Python.
