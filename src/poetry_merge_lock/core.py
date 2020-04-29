@@ -77,7 +77,7 @@ def load_packages(locker: Locker, lock_data: _TOMLDocument) -> List[Package]:
     locker._lock_data = lock_data
     repository = locker.locked_repository(with_dev_reqs=True)
     activate_dependencies(repository.packages)
-    return repository.packages
+    return repository.packages  # type: ignore[no-any-return]  # noqa: F723
 
 
 def save(locker: Locker, lock_data: _TOMLDocument, root: Package) -> None:
