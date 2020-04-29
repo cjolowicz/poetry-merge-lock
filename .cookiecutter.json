@@ -1,10 +1,10 @@
 {
-    "_template": "https://github.com/cjolowicz/cookiecutter-hypermodern-python",
-    "author": "Claudio Jolowicz",
-    "email": "mail@claudiojolowicz.com",
-    "friendly_name": "Poetry Merge Lock",
-    "github_user": "cjolowicz",
-    "package_name": "poetry_merge_lock",
-    "project_name": "poetry-merge-lock",
-    "version": "0.1.0"
+  "_template": "https://github.com/cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Claudio Jolowicz",
+  "email": "mail@claudiojolowicz.com",
+  "friendly_name": "Poetry Merge Lock",
+  "github_user": "cjolowicz",
+  "package_name": "poetry_merge_lock",
+  "project_name": "poetry-merge-lock",
+  "version": "0.1.0"
 }
