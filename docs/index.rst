@@ -1,12 +1,19 @@
-poetry-merge-lock
+Poetry Merge Lock
 ==============================
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
-   license
    reference
+   contributing
+   Code of Conduct <codeofconduct>
+   License <license>
+   Changelog <https://github.com/cjolowicz/poetry-merge-lock/releases>
+
+.. include:: ../README.rst
+   :start-after: badges-begin
+   :end-before: badges-end
 
 This package has a command-line interface.
 
@@ -14,7 +21,7 @@ This package has a command-line interface.
 Installation
 ------------
 
-To install poetry-merge-lock,
+To install Poetry Merge Lock,
 run this command in your terminal:
 
 .. code-block:: console
@@ -25,7 +32,7 @@ run this command in your terminal:
 Usage
 -----
 
-poetry-merge-lock's usage looks like:
+Poetry Merge Lock's usage looks like:
 
 .. code-block:: console
 

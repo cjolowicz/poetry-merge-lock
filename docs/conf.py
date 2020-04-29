@@ -2,7 +2,8 @@
 from datetime import datetime
 
 
-project = "poetry-merge-lock"
+project = "Poetry Merge Lock"
 author = "Claudio Jolowicz"
 copyright = f"{datetime.now().year}, {author}"
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon", "sphinx_autodoc_typehints"]
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.napoleon"]
+autodoc_typehints = "description"

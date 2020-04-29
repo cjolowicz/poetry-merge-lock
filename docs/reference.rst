@@ -6,8 +6,8 @@ Reference
     :backlinks: none
 
 
-poetry_merge_lock.console
+poetry_merge_lock.__main__
 --------------------------
 
-.. automodule:: poetry_merge_lock.console
+.. automodule:: poetry_merge_lock.__main__
    :members:
