@@ -8,4 +8,4 @@ import-order-style = google
 docstring-convention = google
 per-file-ignores =
     tests/*:S101
-    src/poetry_merge_lock/console.py:D301
+    src/poetry_merge_lock/__main__.py:D301

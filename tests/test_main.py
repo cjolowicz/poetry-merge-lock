@@ -21,6 +21,6 @@ def test_main_succeeds(runner: CliRunner) -> None:
 
 def test_main_prints_content_hash(runner: CliRunner) -> None:
     """It prints the content hash."""
-    result = runner.invoke(console.main, ["--print-content-hash"])
+    result = runner.invoke(__main__.main, ["--print-content-hash"])
     pattern = re.compile("[0-9a-f]{64}\n")
     assert pattern.match(result.output) is not None
