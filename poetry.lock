@@ -443,6 +443,7 @@ testing = ["packaging", "importlib-resources"]
 [[package]]
 category = "main"
 description = "Low-level, pure Python DBus protocol wrapper."
+marker = "python_version >= \"3.5\" and python_version < \"4.0\" and sys_platform == \"linux\""
 name = "jeepney"
 optional = false
 python-versions = ">=3.5"
@@ -683,12 +684,12 @@ description = "Python dependency management and packaging made easy."
 name = "poetry"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.0.3"
+version = "1.0.5"
 
 [package.dependencies]
 cachy = ">=0.3.0,<0.4.0"
 cleo = ">=0.7.6,<0.8.0"
-clikit = ">=0.4.1,<0.5.0"
+clikit = ">=0.4.2,<0.5.0"
 html5lib = ">=1.0,<2.0"
 jsonschema = ">=3.1,<4.0"
 pexpect = ">=4.7.0,<5.0.0"
@@ -698,7 +699,7 @@ pyrsistent = ">=0.14.2,<0.15.0"
 requests = ">=2.18,<3.0"
 requests-toolbelt = ">=0.8.0,<0.9.0"
 shellingham = ">=1.1,<2.0"
-tomlkit = ">=0.5.8,<0.6.0"
+tomlkit = ">=0.5.11,<0.6.0"
 
 [package.dependencies.cachecontrol]
 extras = ["filecache"]
@@ -747,6 +748,7 @@ version = "2.5.0"
 [[package]]
 category = "main"
 description = "C parser in Python"
+marker = "python_version >= \"3.5\" and python_version < \"4.0\" and sys_platform == \"linux\""
 name = "pycparser"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -1601,8 +1603,8 @@ pluggy = [
     {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
 ]
 poetry = [
-    {file = "poetry-1.0.3-py2.py3-none-any.whl", hash = "sha256:995a097097a09fe2d58ebf5770c48e893506351f4d8b7793d558611263ca2fe4"},
-    {file = "poetry-1.0.3.tar.gz", hash = "sha256:60a079b1c1d8a4f1538d28ee8d1bf79a5d0eae96f497fdae9512eb3c1f8da13b"},
+    {file = "poetry-1.0.5-py2.py3-none-any.whl", hash = "sha256:81cdb3c708fe03cdef484ccd6c3becc74811dce2b15cb67444c2495b1240a278"},
+    {file = "poetry-1.0.5.tar.gz", hash = "sha256:8e195ea8a4bce4f418a23fd828aa2f9ce06be7655720efd1d95beb0ee641030a"},
 ]
 port-for = [
     {file = "port-for-0.3.1.tar.gz", hash = "sha256:b16a84bb29c2954db44c29be38b17c659c9c27e33918dec16b90d375cc596f1c"},
