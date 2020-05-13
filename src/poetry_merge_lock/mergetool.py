@@ -1,9 +1,13 @@
 """Merge tool for Poetry lock files at the TOML level."""
 import itertools
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
 import tomlkit
-from tomlkit.api import _TOMLDocument, Key, Table
+from tomlkit.api import _TOMLDocument
+from tomlkit.api import Key
+from tomlkit.api import Table
 
 
 class MergeConflictError(ValueError):
