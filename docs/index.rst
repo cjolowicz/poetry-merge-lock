@@ -15,6 +15,10 @@ poetry-merge-lock
    :start-after: badges-begin
    :end-before: badges-end
 
+.. include:: ../README.rst
+   :start-after: badges-begin
+   :end-before: badges-end
+
 This is a tool for resolving merge conflicts in the lock file of `Poetry`_,
 a packaging and dependency manager for Python.
 If the merge conflicts cannot be resolved by this tool,
