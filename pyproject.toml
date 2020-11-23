@@ -28,7 +28,7 @@ typeguard = "^2.9.1"
 xdoctest = "^0.15.0"
 sphinx = "^3.2.1"
 sphinx-autobuild = "^2020.9.1"
-pre-commit = "^2.7.1"
+pre-commit = "^2.9.0"
 
 [tool.poetry.scripts]
 poetry-merge-lock = "poetry_merge_lock.__main__:main"
