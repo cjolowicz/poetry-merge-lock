@@ -1,6 +1,10 @@
 poetry-merge-lock
 =================
 
+**This repository was archived because poetry-merge-lock is not needed anymore.
+Use the technique described in https://github.com/python-poetry/poetry/issues/496#issuecomment-738680177 to resolve merge conflicts in Poetry lock files in a safe way.
+This tool depends on implementation details of Poetry, so it's likely to break in newer versions of Poetry.**
+
 .. badges-begin
 
 |Tests| |Codecov| |PyPI| |Python Version| |Read the Docs| |License| |Black| |pre-commit| |Dependabot|
